@@ -336,4 +336,4 @@ if __name__ == '__main__':
         print(dataset)
         opt_eval(model, testloader, DEV, dataset, args.log_wandb)
 
-    torch.save_pretrained(model, f'./model_opt/model_opt_1b')
+    torch.save(model, f'./model_opt/model_opt_1b')
