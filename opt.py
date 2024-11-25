@@ -328,12 +328,6 @@ if __name__ == '__main__':
             if 'fc2' in n:
                 break
         print(time.time() - tick)
+    
+    torch.save(model, f'./model_opt_quant_prune/model_opt_1b_prune')
 
-    for dataset in ['wikitext2', 'ptb', 'c4']:
-        dataloader, testloader = get_loaders(
-            dataset, seed=args.seed, model=args.model, seqlen=model.seqlen
-        )
-        print(dataset)
-        opt_eval(model, testloader, DEV, dataset, args.log_wandb)
-
-    torch.save(model, f'./model_opt/model_opt_1b')
